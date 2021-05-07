@@ -7,6 +7,9 @@ const songService = {
   async findOne(id) {
     return songRepository.findOne(id);
   },
+  async findTrack(id) {
+    return songRepository.findTrack(id);
+  },
   async delete(id) {
     return songRepository.delete(id);
   },

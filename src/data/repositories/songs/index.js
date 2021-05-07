@@ -10,6 +10,10 @@ const songRepository = {
     const dbSong = await Song.findByPk(id);
     return new DomainSong(dbSong);
   },
+  async findTrack(id) {
+    const dbSong = await Song.findByPk(id);
+    return dbSong.track;
+  },
   async create(newSong) {
     const dbSong = await Song.create(newSong);
     return new DomainSong(dbSong);
