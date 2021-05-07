@@ -20,7 +20,7 @@ const Song = db.define('songs', {
     type: Sequelize.STRING
   },
   coverUrl: {
-    type: Sequelize.STRING
+    type: Sequelize.TEXT
   },
   track: {
     type: Sequelize.BLOB('long'),
