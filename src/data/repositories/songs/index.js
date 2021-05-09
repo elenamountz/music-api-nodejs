@@ -11,7 +11,12 @@ const songRepository = {
     return new DomainSong(dbSong);
   },
   async findTrack(id) {
-    const dbSong = await Song.findByPk(id);
+    const dbSong = await Song.findOne({
+      attributes: ['track'],
+      where: {
+        id
+      },
+    });
     return dbSong.track;
   },
   async create(newSong) {

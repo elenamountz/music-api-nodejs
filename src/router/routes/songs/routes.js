@@ -57,12 +57,12 @@ router.delete('/:id', async (req, res) => {
 router.post('/upload', 
   upload.single('audio_file'), songValidatorRules.upload, validate,
   async (req, res) => {
-    // try {
+    try {
       const uploadedSong = await songService.upload(req);
       res.status(201).send(new SongInfoResponse(uploadedSong));
-    // } catch (err) {
-    //   res.status(400).send(err);
-    // }
+    } catch (err) {
+      res.status(400).send(err);
+    }
 });
 
 module.exports = router;
